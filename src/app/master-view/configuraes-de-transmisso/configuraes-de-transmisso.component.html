@@ -1,0 +1,172 @@
+<div class="row-layout cabealho-conexo-tv">
+  <div class="column-layout texto-cabealho-tv">
+    <h3 class="content">
+      Conexão TV LG WebOS
+    </h3>
+    <p class="subttulo-transmisso-tv">
+      Configure e transmita canais e filmes do seu PC diretamente para o navegador da sua TV LG
+    </p>
+  </div>
+</div>
+<div class="row-layout corpo-principal-transmisso">
+  <div class="column-layout ajustes-de-porta-e-ip">
+    <form class="column-layout formulrio-conexo-tv">
+      <h6 class="content_1">
+        Configuração do Servidor Local
+      </h6>
+      <div class="row-layout campos-porta-e-ip">
+        <igx-input-group type="border" class="porta-de-conexo">
+          <igx-prefix>
+            <igx-icon class="icon-mpeiij">
+              settings_ethernet
+            </igx-icon>
+          </igx-prefix>
+          <input type="text" [(ngModel)]="value" required="true" igxInput #igxInput />
+          <label igxLabel>Porta de Conexão</label>
+          @if (igxInput.validity.valueMissing) {
+            <igx-hint>This field is required</igx-hint>
+          }
+        </igx-input-group>
+        <igx-input-group type="border" class="ip-do-pc">
+          <igx-prefix>
+            <igx-icon class="icon-mpeiij">
+              computer
+            </igx-icon>
+          </igx-prefix>
+          <input type="text" [(ngModel)]="value1" required="true" igxInput #igxInput1 />
+          <label igxLabel>IP Local do PC</label>
+          @if (igxInput1.validity.valueMissing) {
+            <igx-hint>This field is required</igx-hint>
+          }
+        </igx-input-group>
+      </div>
+      <div class="column-layout instrues-de-acesso">
+        <igx-banner class="banner-webos-warning">
+          <p>
+            Se a TV LG der erro 'página não disponível', certifique-se de digitar o link com HTTP (sem S) e na mesma rede Wi-Fi.
+          </p>
+          <igx-icon class="icon">
+            mail
+          </igx-icon>
+        </igx-banner>
+        <p class="ig-typography__overline subttulo-transmisso-tv">
+          Passo 1: No navegador da TV LG WebOS, acesse:
+        </p>
+        <h5 class="content">
+          http://192.168.1.100:8080/play
+        </h5>
+        <p class="ig-typography__caption content_1">
+          Certifique-se de que a TV LG e o PC estejam conectados na mesma rede Wi-Fi/Cabo.
+        </p>
+      </div>
+      <div class="row-layout aes-de-transmisso">
+        <button igxButton="outlined" type="button" class="boto-testar-conexo">
+          Testar Conexão Local
+        </button>
+        <button igxButton="contained" type="button" class="iniciar-servidor">
+          Iniciar Transmissão
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="column-layout ajustes-de-porta-e-ip">
+    <div class="column-layout melhorias-de-imagem">
+      <h6 class="content_1">
+        Otimização e Processamento TV LG
+      </h6>
+      <div class="row-layout controle-upscaling">
+        <div class="column-layout texto-cabealho-tv">
+          <p class="ig-typography__subtitle-2 content">
+            Upscaling Automático para 4K
+          </p>
+          <p class="ig-typography__body-2 content_1">
+            Melhora automaticamente a qualidade de streams de baixa resolução na TV LG
+          </p>
+        </div>
+        <igx-switch [(ngModel)]="checked" class="interruptor-4-k">
+          Label
+        </igx-switch>
+      </div>
+      <div class="row-layout controle-upscaling">
+        <div class="column-layout texto-cabealho-tv">
+          <p class="ig-typography__subtitle-2 content_1">
+            Preencher Tela Automático (100%)
+          </p>
+          <p class="ig-typography__body-2 content_1">
+            Sincroniza os botões 100% do PC para forçar tela cheia no navegador WebOS
+          </p>
+        </div>
+        <igx-switch [(ngModel)]="checked1" class="interruptor-4-k">
+          Label
+        </igx-switch>
+      </div>
+      <div class="row-layout controle-upscaling">
+        <div class="column-layout texto-cabealho-tv">
+          <p class="ig-typography__subtitle-2 content_1">
+            Sincronização de Áudio Sem Atraso
+          </p>
+          <p class="ig-typography__body-2 content_1">
+            Prioriza o buffer de áudio para evitar atraso de som entre o PC e a TV
+          </p>
+        </div>
+        <igx-switch [(ngModel)]="checked2" class="interruptor-4-k">
+          Label
+        </igx-switch>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row-layout seo-de-soluo-de-problemas">
+  <div class="column-layout coluna-soluo">
+    <h5 class="content_1">
+      Guia de Solução: Erro de Página não Disponível na TV LG
+    </h5>
+    <igx-accordion [singleBranchExpand]="true" class="acordeo-de-soluo">
+      <igx-expansion-panel>
+        <igx-expansion-panel-body>
+          <div class="column-layout column-layout-fd-9-9eb">
+            <p class="ig-typography__body-2 content_1">
+              O Firewall do Windows costuma bloquear conexões de entrada de outros aparelhos (como a TV) na rede local.
+            </p>
+            <p class="ig-typography__body-2 content_1">
+              Como corrigir: Acesse Painel de Controle -&gt; Firewall do Windows Defender -&gt; Permitir um aplicativo. Certifique-se de que a porta de transmissão selecionada (ex: 8080) esteja liberada para redes Privadas/Domésticas.
+            </p>
+          </div>
+        </igx-expansion-panel-body>
+        <igx-expansion-panel-header iconPosition="right">
+          <igx-expansion-panel-title>1. Liberar no Firewall do Windows/PC</igx-expansion-panel-title>
+        </igx-expansion-panel-header>
+      </igx-expansion-panel>
+      <igx-expansion-panel>
+        <igx-expansion-panel-body>
+          <div class="column-layout column-layout-fd-9-9eb">
+            <p class="ig-typography__body-2 content_1">
+              Muitos roteadores modernos criam redes separadas para Wi-Fi de 2.4GHz e 5GHz (isolamento AP), impedindo que a TV fale com o PC.
+            </p>
+            <p class="ig-typography__body-2 content_1">
+              Como corrigir: Verifique no seu celular ou TV se ambos estão conectados exatamente no MESMO nome de rede Wi-Fi e na mesma frequência (ex: se o PC está no cabo e a TV no Wi-Fi, garanta que estejam no mesmo roteador principal).
+            </p>
+          </div>
+        </igx-expansion-panel-body>
+        <igx-expansion-panel-header iconPosition="right">
+          <igx-expansion-panel-title>2. Mesma Banda de Wi-Fi (Isolamento de Ponto de Acesso)</igx-expansion-panel-title>
+        </igx-expansion-panel-header>
+      </igx-expansion-panel>
+      <igx-expansion-panel>
+        <igx-expansion-panel-body>
+          <div class="column-layout column-layout-fd-9-9eb">
+            <p class="ig-typography__body-2 content_1">
+              A porta padrão 8080 pode estar em uso por outro programa no seu computador (como servidores locais, torrents ou dev tools).
+            </p>
+            <p class="ig-typography__body-2 content_1">
+              Como corrigir: Tente mudar a porta de conexão para 8888, 3000 ou 80 no formulário ao lado e inicie a transmissão novamente. Lembre-se de atualizar o endereço digitado na TV.
+            </p>
+          </div>
+        </igx-expansion-panel-body>
+        <igx-expansion-panel-header iconPosition="right">
+          <igx-expansion-panel-title>3. Testar Portas Alternativas (Evitar Conflitos)</igx-expansion-panel-title>
+        </igx-expansion-panel-header>
+      </igx-expansion-panel>
+    </igx-accordion>
+  </div>
+</div>
