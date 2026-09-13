@@ -29,10 +29,10 @@
               link
             </igx-icon>
           </igx-prefix>
-          <input type="text" [(ngModel)]="value" placeholder="Cole a URL do canal ou filme aqui..." required="true" igxInput #igxInput />
+          <input type="text" [(ngModel)]="value" placeholder="Cole a URL do canal ou filme aqui..." required="true" readonly="true" igxInput #igxInput />
           <label igxLabel>Link do Site ou Embed (YouTube, IPTV, M3U8, etc.)</label>
           @if (igxInput.validity.valueMissing) {
-            <igx-hint>This field is required</igx-hint>
+            <igx-hint>sample hint text</igx-hint>
           }
         </igx-input-group>
         <button igxButton="contained" type="button" class="boto-carregar">

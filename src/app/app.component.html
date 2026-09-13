@@ -33,3 +33,9 @@
 <igx-snackbar actionText="Action" [displayTime]="4500" (clicked)="notificaoTransmisso.toggle()" #notificaoTransmisso class="notificao-tela-cheia">
   Servidor local iniciado na porta 8080. Acesse no navegador da sua TV LG WebOS!
 </igx-snackbar>
+<igx-snackbar actionText="Action" (clicked)="notificaoMediaCarregada.toggle()" #notificaoMediaCarregada class="notificao-tela-cheia">
+  Link de mídia carregado com sucesso! Pronto para streaming.
+</igx-snackbar>
+<igx-snackbar actionText="Action" [displayTime]="6000" (clicked)="notificaoTesteConexo.toggle()" #notificaoTesteConexo class="notificao-tela-cheia">
+  Conexão de rede testada localmente! Se a TV der erro de página não disponível, verifique as regras de Firewall do Windows.
+</igx-snackbar>
