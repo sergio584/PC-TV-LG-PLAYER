@@ -1,0 +1,117 @@
+<div class="row-layout cabealho-do-player">
+  <div class="column-layout texto-cabealho">
+    <h3 class="content">
+      Play no PC &amp; Streaming
+    </h3>
+    <p class="subttulo-do-player">
+      Insira links de sites ou embeds para assistir e transmitir para sua TV LG
+    </p>
+  </div>
+  <div class="row-layout aes-rpidas">
+    <button igxButton="contained" type="button" class="boto-1-0-0-tela-cheia">
+      <igx-icon class="icon">
+        fullscreen
+      </igx-icon>
+      <span>Abrir Tela 100%</span>
+    </button>
+  </div>
+</div>
+<div class="row-layout rea-principal-player">
+  <div class="column-layout painel-do-vdeo">
+    <div class="column-layout carregar-links">
+      <h6 class="content_1">
+        Inserir Canal ou Filme
+      </h6>
+      <div class="row-layout campos-do-formulrio">
+        <igx-input-group type="border" class="url-da-mdia">
+          <igx-prefix>
+            <igx-icon class="icon-crnzqr">
+              link
+            </igx-icon>
+          </igx-prefix>
+          <input type="text" [(ngModel)]="value" placeholder="Cole a URL do canal ou filme aqui..." required="true" igxInput #igxInput />
+          <label igxLabel>Link do Site ou Embed (YouTube, IPTV, M3U8, etc.)</label>
+          @if (igxInput.validity.valueMissing) {
+            <igx-hint>This field is required</igx-hint>
+          }
+        </igx-input-group>
+        <button igxButton="contained" type="button" class="boto-carregar">
+          Carregar Player
+        </button>
+      </div>
+    </div>
+    <div class="column-layout tela-de-vdeo-simulao">
+      <img src="/assets/a-movie-screen-showing-an-epic-e65771fc3649.png" alt="" class="imagem-placeholder-vdeo" />
+      <div class="row-layout controles-de-reproduo">
+        <igx-buttongroup class="controles-de-vdeo">
+          <button igxButton>
+            <igx-icon>
+              add
+            </igx-icon>
+            <span>Button</span>
+          </button>
+          <button igxButton>
+            <igx-icon>
+              add
+            </igx-icon>
+            <span>Button</span>
+          </button>
+          <button igxButton>
+            <igx-icon>
+              add
+            </igx-icon>
+            <span>Button</span>
+          </button>
+          <button igxButton>
+            <igx-icon>
+              add
+            </igx-icon>
+            <span>Button</span>
+          </button>
+        </igx-buttongroup>
+        <div class="row-layout status-de-conexo">
+          <igx-icon class="cone-tv">
+            tv
+          </igx-icon>
+          <p class="ig-typography__body-2 content">
+            Disponível para TV LG WebOS (Porta 8080)
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="column-layout lista-de-canais">
+    <h5 class="content_1">
+      Canais &amp; Filmes Populares
+    </h5>
+    @for (item of mediaRowsMediaContent; track item) {
+      <igx-card class="carto-de-mdia">
+        <igx-card-header>
+          <h3 igxCardHeaderTitle>
+            {{ item.title }}
+          </h3>
+          <h5 igxCardHeaderSubtitle>
+            {{ item.category }}
+          </h5>
+        </igx-card-header>
+        <igx-card-content>
+          <div class="column-layout column-layout-h-1phql">
+            <div class="row-layout metadata-do-canal">
+              <igx-badge [value]="item.type" class="tipo-de-mdia"></igx-badge>
+              <button igxButton="flat" type="button" class="assistir-agora">
+                <span>Carregar</span>
+                <igx-icon class="icon_1">
+                  arrow_forward
+                </igx-icon>
+              </button>
+            </div>
+          </div>
+        </igx-card-content>
+        <igx-card-actions>
+          <ng-container igxStart></ng-container>
+          <ng-container igxEnd></ng-container>
+        </igx-card-actions>
+      </igx-card>
+    }
+  </div>
+</div>
